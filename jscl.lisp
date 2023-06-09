@@ -255,7 +255,11 @@
     ;; Deno REPL
     (compile-application (list (source-pathname "deno.lisp" :directory '(:relative "deno")))
                          (merge-pathnames "jscl-deno.js" *base-directory*)
-                         :shebang nil)))
+                         :shebang nil)
+
+    ;; Script Runner
+    (compile-application (list (source-pathname "runner.lisp" :directory '(:relative "runner")))
+                         (merge-pathnames "jscl-runner.js" *base-directory*))))
 
 
 ;;; Run the tests in the host Lisp implementation. It is a quick way
